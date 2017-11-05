@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="sevenUstudio.climberlog" version="0.1.0">
+  <name>Climberlog</name>
+  <description>
+    Example Tabris.js App
+  </description>
+  <author email="julius@athenstaedt.de">
+    Sevenuz
+  </author>
+  <preference name="EnableDeveloperConsole" value="$IS_DEBUG"/>
+  <plugin name="cordova-sqlite-storage" spec="*"/>
+</widget>
