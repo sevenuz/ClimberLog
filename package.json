@@ -8,7 +8,9 @@
     "start": "tabris serve"
   },
   "dependencies": {
-    "tabris": "^2.1.1"
+    "nedb": "^1.8.0",
+    "tabris": "^2.1.1",
+    "tabris-js-node": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "^4.10.0"

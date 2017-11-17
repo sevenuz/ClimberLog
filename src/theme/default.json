@@ -1,0 +1,15 @@
+{
+  "icon_path": "images/icons/white/",
+
+  ".main-background": {"background": "#334d77"},
+  ".active-main-background": {"background": "#263959"},
+
+  ".drawer-background": {"background": "#4a75ba"},
+
+  ".default-text": {"textColor": "#cecece"},
+  ".red-text": {"textColor": "#911a1a"},
+  ".black-text": {"textColor": "#000000"},
+  ".white-text": {"textColor": "#ffffff"},
+
+  ".default-border": {"borderColor": "#cecece"}
+}

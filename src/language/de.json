@@ -1,0 +1,16 @@
+{
+  "#drawerNetworkStatus": {"text": "Nicht verbunden"},
+  "#drawerUserName": {"text": "Benutzername"},
+
+  "#drawerHomeButton": {"text": "Startseite"},
+  "#drawerEntriesButton": {"text": "Einträge"},
+  "#drawerStatsButton": {"text": "Statistiken"},
+  "#drawerNewEntryButton": {"text": "Neuer Eintrag"},
+  "#drawerSettingsButton": {"text": "Einstellungen"},
+
+  "#newEntryPage": {"title": "Neuer Eintrag"},
+
+  "#loginPage": {"title": "Anmelden"},
+  "#loginEmailInput": {"message": "Email"},
+  "#loginPasswordInput": {"message": "Passwort"}
+}

@@ -1,0 +1,22 @@
+{
+  "#drawerNetworkStatus": {"text": "Not Connected"},
+  "#drawerUserName": {"text": "Username"},
+
+  "#drawerHomeButton": {"text": "Home"},
+  "#drawerEntriesButton": {"text": "Entries"},
+  "#drawerStatsButton": {"text": "Stats"},
+  "#drawerNewEntryButton": {"text": "New Entry"},
+  "#drawerSettingsButton": {"text": "Settings"},
+
+  "#newEntryPage": {"title": "New Entry"},
+  "#newEntryTitleInput": {"message": "Title"},
+  "#newEntryRopedPartyInput": {"message": "Roped Party"},
+  "#newEntryRopedPartyView": {"text": "Seperate climbers with a comma (,)"},
+  "#newEntryLeadClimbingInput": {"message": "Lead Climber"},
+  "#newEntryRemarkInput": {"message": "Remark"},
+  "#newEntryRemarkIosView": {"message": "Write your Remark"},
+
+  "#loginPage": {"title": "Login"},
+  "#loginEmailInput": {"message": "Email"},
+  "#loginPasswordInput": {"message": "Password"}
+}
