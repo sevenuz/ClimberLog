@@ -8,5 +8,4 @@
     Sevenuz
   </author>
   <preference name="EnableDeveloperConsole" value="$IS_DEBUG"/>
-  <plugin name="cordova-sqlite-storage" spec="*"/>
 </widget>
