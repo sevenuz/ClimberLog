@@ -1,5 +1,5 @@
 
-var Collection = require('nedb');
+var Collection = require('./nedb');
 var db = {};
 
 db.Users = new Collection({ filename: Collection.fs.filesDir + "/Users.db", autoload: true });//new Collection({ filename: fs.filesDir + "/Users.db", autoload: true });
