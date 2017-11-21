@@ -18,5 +18,8 @@
 
   "#loginPage": {"title": "Login"},
   "#loginEmailInput": {"message": "Email"},
-  "#loginPasswordInput": {"message": "Password"}
+  "#loginPasswordInput": {"message": "Password"},
+
+  "datePickerTodayText": "Today",
+  "datePickerCancelText": "Cancel"
 }

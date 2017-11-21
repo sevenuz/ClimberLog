@@ -24,7 +24,11 @@ language.setLanguage = function(name, elems) {
 };
 
 language.get = function(clas,prop) {
-  return language.data[clas][prop];
+  if (prop) {
+    return language.data[clas][prop];
+  }else {
+    return language.data[clas];
+  }
 }
 
 language.setLanguage('en');

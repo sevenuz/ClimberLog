@@ -6,7 +6,7 @@ theme = require('./theme/theme');
 //language = require('./language/language');
 
 sideNav = require('./sideNav');
-newEntryView = require('./newEntryView');
+newEntryView = require('./newEntry');
 loginView = require('./loginView');
 
 var contentWrapper = new Composite({
@@ -29,7 +29,7 @@ sideNav.onChangeMenu = function (selectedMenu, oldTarget, newTarget) {
 ui.drawer.enabled = true;
 ui.drawer.append(sideNav);
 
-console.log("gogo");
+console.log("gogogo");
 contentWrapper.append(loginView);
 
 ui.contentView.append(contentWrapper);
