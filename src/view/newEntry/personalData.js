@@ -21,16 +21,6 @@ let personalData = new Composite({
   }
 });
 
-var titleInput = new TextInput({
-  class: "default-text default-border",
-  id: 'newEntryTitleInput',
-  layoutData: {
-    left: 0,
-    right: 0,
-    top: 0, // label's bottom edge + 10px, i.e. 10px below label
-  }
-}).appendTo(personalData);
-
 var personalDataCollapseButton = new ImageView({
   id: 'newEntryPersonalDataCollapseButton',
   scaleMode: 'fit',
@@ -40,7 +30,41 @@ var personalDataCollapseButton = new ImageView({
     top: 0,
     right: 0,
   },
-  image: theme.getIcon("ic_filter")
+  image: theme.getIcon("ic_expand")
+}).appendTo(personalData);
+
+var titleInput = new TextInput({
+  class: "default-text default-border",
+  id: 'newEntryTitleInput',
+  layoutData: {
+    left: 0,
+    right: 50,
+    top: 0, // label's bottom edge + 10px, i.e. 10px below label
+  }
+}).appendTo(personalData);
+
+var shortInfoRightView = new TextView({
+  class: "default-text",
+  id: 'newEntryShortPersonalInfoRightView',
+  alignment: 'right',
+  opacity: 0,
+  layoutData: {
+    left: 0,
+    right: 0,
+    top: "#newEntryTitleInput", // label's bottom edge + 10px, i.e. 10px below label
+  }
+}).appendTo(personalData);
+
+var shortInfoLeftView = new TextView({
+  class: "default-text",
+  id: 'newEntryShortPersonalInfoLeftView',
+  alignment: 'left',
+  opacity: 0,
+  layoutData: {
+    left: 0,
+    right: 0,
+    top: "#newEntryTitleInput", // label's bottom edge + 10px, i.e. 10px below label
+  }
 }).appendTo(personalData);
 
 
@@ -52,54 +76,47 @@ let personalDataCollapse = new Composite({
     left: 0,
     right: 0,
     top: 'prev()',
-    height: 200
+    //height: 200
   }
 });
 
+var dateLabel = new TextView({
+  class: "default-text label",
+  id: 'newEntryDateLabel',
+}).appendTo(personalDataCollapse);
+
 var date = new TextView({
-  class: "default-text",
+  class: "default-text input",
   id: 'newEntryDate',
-  alignment: 'center',
-  highlightOnTouch: true,
-  text: moment().format('LL'),
-  layoutData: {
-    left: 0,
-    right: 0,
-    top: "prev()", // label's bottom edge + 10px, i.e. 10px below label
-  }
+}).appendTo(personalDataCollapse);
+
+var ropedPartyLabel = new TextView({
+  class: "default-text label",
+  id: 'newEntryRopedPartyLabel',
 }).appendTo(personalDataCollapse);
 
 var ropedPartyInput = new TextInput({
-  class: "default-text default-border",
+  class: "default-text default-border input",
   id: 'newEntryRopedPartyInput',
-  layoutData: {
-    left: 0,
-    right: 0,
-    top: "prev()", // label's bottom edge + 10px, i.e. 10px below label
-  }
 }).appendTo(personalDataCollapse);
 
 var ropedPartyView = new TextView({
-  class: "default-text",
+  class: "default-text hint",
   id: 'newEntryRopedPartyView',
-  font: 'italic 10px',
-  layoutData: {
-    left: 0,
-    right: 0,
-    top: "prev()", // label's bottom edge + 10px, i.e. 10px below label
-  }
+}).appendTo(personalDataCollapse);
+
+var leadClimbingLabel = new TextView({
+  class: "default-text label",
+  id: 'newEntryLeadClimbingLabel',
 }).appendTo(personalDataCollapse);
 
 var leadClimbingInput = new TextInput({
-  class: "default-text default-border",
+  class: "default-text default-border input",
   id: 'newEntryLeadClimbingInput',
-  layoutData: {
-    left: 0,
-    right: 0,
-    top: "prev()", // label's bottom edge + 10px, i.e. 10px below label
-  }
 }).appendTo(personalDataCollapse);
 
+/*
+//Kommentar disabled
 var remarkInput = new TextInput({
   class: "default-text default-border",
   id: 'newEntryRemarkInput',
@@ -113,7 +130,7 @@ var remarkInput = new TextInput({
 
 //Fallback, weil iOS bei Multiline keine message zeigt
 if (device.platform == "iOS") {
-  var ropedPartyView = new TextView({
+  var remarkIosView = new TextView({
     class: "default-text",
     id: 'newEntryRemarkIosView',
     font: 'italic 10px',
@@ -124,10 +141,21 @@ if (device.platform == "iOS") {
     }
   }).appendTo(personalDataCollapse);
 }
-
+*/
 
 
 module.exports = {
   personalData: personalData,
+  titleInput: titleInput,
+  personalDataCollapseButton: personalDataCollapseButton,
+  shortInfoLeftView: shortInfoLeftView,
+  shortInfoRightView: shortInfoRightView,
+
   personalDataCollapse: personalDataCollapse,
+  date: date,
+  ropedPartyInput: ropedPartyInput,
+  ropedPartyView: ropedPartyView,
+  leadClimbingInput: leadClimbingInput,
+  //remarkInput: remarkInput,
+  //remarkIosView: remarkIosView
 };

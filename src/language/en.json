@@ -10,16 +10,28 @@
 
   "#newEntryPage": {"title": "New Entry"},
   "#newEntryTitleInput": {"message": "Title"},
+  "#newEntryDateLabel": {"text": "Date:"},
+  "#newEntryRopedPartyLabel":{"text": "Roped Party:"},
   "#newEntryRopedPartyInput": {"message": "Roped Party"},
   "#newEntryRopedPartyView": {"text": "Seperate climbers with a comma (,)"},
+  "#newEntryLeadClimbingLabel":{"text": "Lead Climber:"},
   "#newEntryLeadClimbingInput": {"message": "Lead Climber"},
   "#newEntryRemarkInput": {"message": "Remark"},
   "#newEntryRemarkIosView": {"message": "Write your Remark"},
+
+  "#newEntryWayInput":{"message": "Way"},
+  "#newEntrySummitLabel":{"text": "Summit:"},
+  "#newEntrySummitInput":{"message": "Summit"},
+  "#newEntryAreaLabel":{"text": "Area:"},
+  "#newEntryAreaInput":{"message": "Area"},
+  "#newEntryCountryLabel":{"text": "Country:"},
+  "#newEntryCountryInput":{"message": "Country", "text": "Germany"},
 
   "#loginPage": {"title": "Login"},
   "#loginEmailInput": {"message": "Email"},
   "#loginPasswordInput": {"message": "Password"},
 
   "datePickerTodayText": "Today",
-  "datePickerCancelText": "Cancel"
+  "datePickerCancelText": "Cancel",
+  "you": "You"
 }

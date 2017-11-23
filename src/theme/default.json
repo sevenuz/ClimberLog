@@ -11,5 +11,36 @@
   ".black-text": {"textColor": "#000000"},
   ".white-text": {"textColor": "#ffffff"},
 
-  ".default-border": {"borderColor": "#cecece"}
+  ".default-border": {"borderColor": "#cecece"},
+
+
+
+  ".label": {
+    "alignment": "left",
+    "font": "normal 16px",
+    "highlightOnTouch": false,
+    "layoutData": {
+      "left": 0,
+      "right": "66%",
+      "top": ["prev()", 10]
+    }
+  },
+  ".input":{
+    "alignment": "left",
+    "font": "italic 16px",
+    "highlightOnTouch": true,
+    "layoutData": {
+      "left": ["prev()",0],
+      "right": 0,
+      "baseline": "prev()"
+    }
+  },
+  ".hint":{
+    "font": "italic 10px",
+    "layoutData": {
+      "left": "33%",
+      "right": 0,
+      "top": "prev()"
+    }
+  }
 }

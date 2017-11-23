@@ -3,18 +3,38 @@ language = require('./language/language');
 
 var moment = require('./res/moment-with-locales');
 
-const {view, safeAction} = require('./view/newEntry/newEntryView');
+const {
+  view,
+  safeAction,
+  personalData
+} = require('./view/newEntry/newEntryView');
 var utils = require('./res/utils');
 
-view.find("#newEntryPersonalDataCollapseButton").on("tap", function() {
-  utils.toggleCollapse(this, view.find("#newEntryPersonalDataCollapse").first());
+//when height of personalDataCollapse is calculated, set it global for toggleCollapse
+personalData.personalDataCollapse.on('resize', (element) => {
+  personalData.personalDataCollapse.height = element.height;
+});
+
+personalData.personalDataCollapseButton.on("tap", function() {
+  utils.toggleCollapse(this, personalData.personalDataCollapse);
+  personalData.shortInfoLeftView.set({
+    text: personalData.date.text
+  });
+  utils.toggleCollapse(false,personalData.shortInfoLeftView);
+  personalData.shortInfoRightView.set({
+    text: personalData.leadClimbingInput.text + ", " + language.get("you")
+  });
+  utils.toggleCollapse(false,personalData.shortInfoRightView);
 });
 
 view.find("#newEntryRopedPartyInput").on("accept", function(e) {
-  leadClimbingInput.text = e.text.split(/,\s*/)[0];
+  personalData.leadClimbingInput.text = e.text.split(/,\s*/)[0];
 });
 
-view.find('#newEntryDate').on("tap", function() {
+//view.find('#newEntryDate').set("text",moment().format('LL'));
+personalData.date.text = moment().format('LL');
+
+personalData.date.on("tap", function() {
   let self = this;
   datePicker.show({
     date: moment().toDate(),
@@ -25,6 +45,22 @@ view.find('#newEntryDate').on("tap", function() {
   }, function(date) {
     self.text = moment(date).format('LL');
   }, function(err) {});
+});
+
+
+
+
+
+locationData.locationDataCollapse.on('resize', (element) => {
+  locationData.locationDataCollapse.height = element.height;
+});
+
+locationData.locationDataCollapseButton.on("tap", function() {
+  utils.toggleCollapse(this, locationData.locationDataCollapse);
+  locationData.shortInfoLeftView.set({
+    text: locationData.countryInput.text + "/" + locationData.areaInput.text + "/" + locationData.summitInput.text
+  });
+  utils.toggleCollapse(false,locationData.shortInfoLeftView);
 });
 
 module.exports = view;

@@ -23,7 +23,6 @@ let view = new NavigationView({
 });
 
 let safeAction = new Action({
-  id: 'newEntrySafeAction',
   image: {
     src: theme.getIcon("ic_done"),
     scale: 3
@@ -49,8 +48,10 @@ page.append(locationData.locationDataCollapse);
 
 theme.setTheme('default', view);
 language.setLanguage('default', view);
-
 module.exports = {
   view: view,
+  page: page,
   safeAction: safeAction,
+  personalData: personalData,
+  locationData: locationData
 };
