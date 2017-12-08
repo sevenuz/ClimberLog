@@ -14,7 +14,15 @@
   ".default-border": {"borderColor": "#cecece"},
 
 
-
+  ".list-element":{
+    "layoutData":{
+      "top":["prev()", 0],
+      "height": 40,
+      "left": 0,
+      "right": 0
+    },
+    "highlightOnTouch": true
+  },
   ".label": {
     "alignment": "left",
     "font": "normal 16px",

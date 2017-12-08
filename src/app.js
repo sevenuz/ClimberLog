@@ -16,13 +16,29 @@ var contentWrapper = new Composite({
     right: 0,
     top: 0
   }
+}).on('resize', function(e) {
+  utils.setPropertiesOnResize(e);
 });
+
+var activeView = {};
+
+function show(view) {
+  //TODO remove other child;
+  if(activeView.detach){
+    activeView.detach();
+  }
+  activeView = view;
+  ui.contentView.append(view);
+  ui.contentView.find('*').on('resize', function(e) {
+    utils.setPropertiesOnResize(e);
+  });
+}
 
 sideNav.onChangeMenu = function (selectedMenu, oldTarget, newTarget) {
   oldTarget.set("background","transparent");
   newTarget.set("background",theme.get('.active-main-background','background'));
   if(selectedMenu == sideNav.MENU.NEW_ENTRY){
-    contentWrapper.append(newEntryView);
+    show(newEntryView);
     ui.drawer.close();
   }
 }
@@ -30,9 +46,9 @@ ui.drawer.enabled = true;
 ui.drawer.append(sideNav);
 
 console.log("gogogo");
-contentWrapper.append(loginView);
+show(loginView);
 
-ui.contentView.append(contentWrapper);
+//ui.contentView.append(contentWrapper);
 
 //theme.setTheme('default',[loginView,sideNav,newEntryView]);
 //language.setLanguage('en',[loginView,sideNav,newEntryView]);

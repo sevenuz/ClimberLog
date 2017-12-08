@@ -2,14 +2,12 @@ const {
   Action,
   Page,
   NavigationView,
-  Composite,
-  TextInput,
-  TextView,
-  ImageView,
+  ScrollView,
   device
 } = require('tabris');
 theme = require('../../theme/theme');
 language = require('../../language/language');
+utils = require('../../res/utils');
 
 personalData = require('./personalData');
 locationData = require('./locationData');
@@ -37,14 +35,30 @@ let page = new Page({
   padding: 20
 }).appendTo(view);
 
+let scrollView = new ScrollView({
+  class: 'main-background newEntry-backgound',
+  id: 'newEntryScrollView',
+  left: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
+}).appendTo(page);
 
 
-page.append(personalData.personalData);
-page.append(personalData.personalDataCollapse);
 
-page.append(locationData.locationData);
-page.append(locationData.locationDataCollapse);
+scrollView.append(personalData.personalData);
+scrollView.append(personalData.personalDataCollapse);
 
+scrollView.append(locationData.locationData);
+scrollView.append(locationData.locationDataCollapse);
+
+/*
+view.find('*').on('resize', function(e) {
+  //console.log(e.target.id, e.top);
+  utils.setPropertiesOnResize(e);
+});
+view.on('resize', utils.setPropertiesOnResize);
+*/
 
 theme.setTheme('default', view);
 language.setLanguage('default', view);
@@ -53,5 +67,6 @@ module.exports = {
   page: page,
   safeAction: safeAction,
   personalData: personalData,
-  locationData: locationData
+  locationData: locationData,
+  scrollView: scrollView
 };

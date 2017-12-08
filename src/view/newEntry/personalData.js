@@ -5,6 +5,7 @@ const {
   ImageView,
   device
 } = require('tabris');
+//var TextPickerInput = require("../../widget/TextPickerInput");
 theme = require('../../theme/theme');
 //language = require('../../language/language');
 
@@ -115,6 +116,25 @@ var leadClimbingInput = new TextInput({
   id: 'newEntryLeadClimbingInput',
 }).appendTo(personalDataCollapse);
 
+/*
+var leadClimbingInput = new TextPickerInput({
+  Composite: {
+    id: 'newEntryLeadClimbingInput',
+    "left": ["prev()", 0],
+    "right": 0,
+    "top": ['prev()',10]
+  },
+  TextInput: {
+    class: "default-text default-border",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0
+  },
+  list: ['Robert', 'Julius']
+}).appendTo(personalDataCollapse);
+console.log("hier123145");
+*/
 /*
 //Kommentar disabled
 var remarkInput = new TextInput({

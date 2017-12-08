@@ -4,6 +4,8 @@ const {
   TextInput,
   TextView
 } = require('tabris');
+//var TextPickerInput = require("../../widget/TextPickerInput");
+var TextPickerInputAlone = require("../../widget/TextPickerInputAlone");
 theme = require('../../theme/theme');
 //language = require('../../language/language');
 
@@ -81,17 +83,24 @@ var summitLabel = new TextView({
   id: 'newEntrySummitLabel',
 }).appendTo(locationDataCollapse);
 
+
 var summitInput = new TextInput({
   class: "default-text default-border input",
   id: 'newEntrySummitInput',
 }).appendTo(locationDataCollapse);
-
+/*
+var summitInput = new TextPickerInputAlone({
+  id: 'newEntrySummitInput',
+  class: "default-text default-border input",
+  list: ['Teufelsturm','Half Dome','El Capitan','Neadel']
+}).appendTo(locationDataCollapse);
+*/
 var areaLabel = new TextView({
   class: "default-text label",
   id: 'newEntryAreaLabel',
 }).appendTo(locationDataCollapse);
 
-var areaInput = new TextInput({
+var areaInput = new TextPickerInputAlone({
   class: "default-text default-border input",
   id: 'newEntryAreaInput',
 }).appendTo(locationDataCollapse);
@@ -100,10 +109,16 @@ var countryLabel = new TextView({
   class: "default-text label",
   id: 'newEntryCountryLabel',
 }).appendTo(locationDataCollapse);
-
+/*
 var countryInput = new TextInput({
   class: "default-text default-border input",
   id: 'newEntryCountryInput',
+}).appendTo(locationDataCollapse);
+*/
+var countryInput = new TextPickerInputAlone({
+  id: 'newEntryCountryInput',
+  class: "default-text default-border input",
+  list: ['Germany','USA','Vietnam','Austria']
 }).appendTo(locationDataCollapse);
 
 module.exports = {
